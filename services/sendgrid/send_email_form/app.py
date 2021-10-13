@@ -27,7 +27,7 @@ def form_submit():
     api_token = request.args.get('api_token')
 
     if check_api_tokens(api_token, accepted_tokens):
-        response = send_sendgrid_email(from_email, to_email, subject, content_to_send, sendgrid_api_token)
+        response = send_sendgrid_email(from_email, to_email, subject, content_to_send)
         html_string = "<h2>" + str(response) + "</h2>"
         return html_string
 

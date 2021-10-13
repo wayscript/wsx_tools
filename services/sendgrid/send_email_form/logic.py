@@ -16,7 +16,7 @@ def check_api_tokens(provided_token, accepted_tokens):
         else:
             return False
 
-def send_sendgrid_email(from_email, to_email, subject, html_content, sendgrid_api_token):
+def send_sendgrid_email(from_email, to_email, subject, html_content):
     message = Mail(
         from_email=from_email,
         to_emails=to_email,
