@@ -6,14 +6,18 @@ They can then distribute self made keys to team members who they would like to b
 These distributed keys can be used in a web form or via url to send an email.
 
 There are two options to send emails with this tool
-1 - Send via url + query parameters
-2 - Use a hosted form to submit the information ( generates the query parameter string )
+<ul>
+<li>Send via url + query parameters</li>
+<li>Use a hosted form to submit the information ( generates the query parameter string )</li>
+</ul>
 
 ## Setup:
 ### Upload files:
 Download from GitHub and upload to WSX the files within send_email_form
 Your file directory inside your lair should look like this:
-![Directory](https://raw.githubusercontent.com/wayscript/wsx_tools/master/static/sendgrid/sendgrid_send_email_form_directory.jpg)
+<p align="center">
+  <img width="300" src="https://raw.githubusercontent.com/wayscript/wsx_tools/master/static/sendgrid/sendgrid_send_email_form_directory.jpg" />
+</p>
 
 ### Setup Secrets
 Create arbitrary keys and values that you will give access to using your tool.
