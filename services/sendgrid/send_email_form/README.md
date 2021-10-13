@@ -15,6 +15,9 @@ There are two options to send emails with this tool
 A Sendgrid account / API Token
 
 ## Setup:
+### Create a Lair 
+Lairs are preconfigured environments hosted by WayScript. To create a Lair, signin to wayscript and click " + New Lair."
+
 ### Upload files:
 Download from GitHub and upload to WSX the files within send_email_form
 Your file directory inside your lair should look like this:
