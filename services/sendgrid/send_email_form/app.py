@@ -32,7 +32,7 @@ def form_submit():
         return html_string
 
     else:
-        return "<h3>Form Invalid</h3>"
+        return "<h3>Form Invalid. Your API Key may of been revoked. Please Contact your Tool Administrator</h3>"
 
 
 if __name__ == '__main__':

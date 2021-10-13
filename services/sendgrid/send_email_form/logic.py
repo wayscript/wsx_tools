@@ -7,14 +7,9 @@ from sendgrid.helpers.mail import Mail
 def check_api_tokens(provided_token, accepted_tokens):
     provided_token_value = os.environ.get(str(provided_token))
     if isinstance( accepted_tokens, list ):
-        accepted_token_values = []
-        for token in accepted_tokens:
-            token_value = os.environ.get(token)
-            accepted_token_values.append(token_value)
-        if provided_token_value in accepted_token_values:
+        accepted_tokens = [os.environ.get(token) for token in accepted_tokens]
+        if provided_token in accepted_tokens:
             return True
-        else:
-            return False
     else:
         if provided_token_value == os.environ.get(accepted_tokens):
             return True

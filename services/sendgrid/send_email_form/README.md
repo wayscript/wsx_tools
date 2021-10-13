@@ -12,7 +12,7 @@ There are two options to send emails with this tool
 </ul>
 
 ## Requirements:
-A Sendgrid account / API Token 
+A Sendgrid account / API Token
 
 ## Setup:
 ### Upload files:
@@ -31,7 +31,7 @@ The names of these tokens should be placed in accepted_tokens in app.py file ( l
 </p>
 
 You will need to place your sendgrid provided api token into your wayscript .secrets file.
-The name of this token will be placed in your app.py file ( line 16 )
+The name of this token should be sendgrid_api_token
 <p align="center">
   <img src="https://raw.githubusercontent.com/wayscript/wsx_tools/master/static/sendgrid/example_tokens.jpg" />
 </p>
