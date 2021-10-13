@@ -14,7 +14,6 @@ There are two options to send emails with this tool
 Download from GitHub and upload to WSX the files within send_email_form
 Your file directory inside your lair should look like this:
 ![Directory](https://raw.githubusercontent.com/wayscript/wsx_tools/master/static/sendgrid/sendgrid_send_email_form_directory.jpg)
-wsx_tools\static\sendgrid\sendgrid_send_email_form_directory.jpg
 
 ### Setup Secrets
 Create arbitrary keys and values that you will give access to using your tool.
