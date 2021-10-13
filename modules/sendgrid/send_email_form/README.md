@@ -13,7 +13,7 @@ There are two options to send emails with this tool
 ### Upload files:
 Download from GitHub and upload to WSX the files within send_email_form
 Your file directory inside your lair should look like this:
-![GitHub Logo](..static/sendgrid/sendgrid_send_email_form_directopry.jpg)
+![GitHub Logo](static/sendgrid/sendgrid_send_email_form_directory.jpg)
 wsx_tools\static\sendgrid\sendgrid_send_email_form_directory.jpg
 
 ### Setup Secrets
