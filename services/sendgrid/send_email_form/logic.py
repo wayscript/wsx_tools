@@ -18,10 +18,10 @@ def check_api_tokens(provided_token, accepted_tokens):
 
 def send_sendgrid_email(from_email, to_email, subject, html_content):
     message = Mail(
-        from_email=from_email,
-        to_emails=to_email,
-        subject=subject,
-        html_content=html_content)
+        from_email = str(from_email),
+        to_emails = str(to_email),
+        subject = str(subject),
+        html_content = str(html_content))
     try:
         sg = SendGridAPIClient(os.environ.get('sendgrid_api_token'))
         response = sg.send(message)

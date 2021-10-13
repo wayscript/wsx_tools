@@ -20,20 +20,17 @@ def index():
 
 @app.route('/send_email')
 def form_submit():
-    to_email = request.args.get('to_email')
-    from_email = request.args.get('from_email')
-    subject = request.args.get('subject')
+    to_email        = request.args.get('to_email')
+    from_email      = request.args.get('from_email')
+    subject         = request.args.get('subject')
     content_to_send = request.args.get('content_to_send')
-    api_token = request.args.get('api_token')
+    api_token       = request.args.get('api_token')
 
     if check_api_tokens(api_token, accepted_tokens):
         response = send_sendgrid_email(from_email, to_email, subject, content_to_send)
-        html_string = "<h2>" + str(response) + "</h2>"
-        return html_string
-
+        return response.status_code
     else:
         return "<h3>Form Invalid. Your API Key may of been revoked. Please Contact your Tool Administrator</h3>"
-
 
 if __name__ == '__main__':
     app.run()
