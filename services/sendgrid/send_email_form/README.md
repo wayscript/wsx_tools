@@ -1,4 +1,5 @@
 # Sendgrid Form to Email Tool
+This is for creating a service to allow users to send sendgrid emails via api or web form. 
 
 ## How it works:
 This tool allows an administrator to have one Sendgrid "master" api token.
