@@ -44,6 +44,7 @@ The command to run will be:
 ```Python
 flask run --port 8080 --host 0.0.0.0
 ```
+Port ```8080```
 For additional help on running servers please see:
 https://wsxdocs.wayscript.com/quickstart/host-a-flask-server
 
