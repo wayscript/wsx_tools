@@ -12,11 +12,9 @@ There are two options to send emails with this tool
 </ul>
 
 ## Requirements:
-A Sendgrid account / API Token
+A Sendgrid account / API Token 
 
 ## Setup:
-### Create a WayScript Lair
-
 ### Upload files:
 Download from GitHub and upload to WSX the files within send_email_form
 Your file directory inside your lair should look like this:
@@ -33,8 +31,7 @@ The names of these tokens should be placed in accepted_tokens in app.py file ( l
 </p>
 
 You will need to place your sendgrid provided api token into your wayscript .secrets file.
-Name this key as sendgrid_api_token
-
+The name of this token will be placed in your app.py file ( line 16 )
 <p align="center">
   <img src="https://raw.githubusercontent.com/wayscript/wsx_tools/master/static/sendgrid/example_tokens.jpg" />
 </p>
@@ -50,18 +47,3 @@ For additional help on running servers please see:
 https://wsxdocs.wayscript.com/quickstart/host-a-flask-server
 
 This will host your tool at the provided url in the trigger
-
-### Testing your Tool
-You can test your tool by either filling out the hosted form, or generate your own query parameters using a request.
-A Sample request may look like:
-
-.. code-block:: python
-  params = {
-  'to_email' : 'Derrick@WayScript.com',
-  'from_email' : 'Nihar@WayScript.com',
-  'subject' : 'Hello!',
-  'content_to_send' : '<p>Hello!</p>',
-  'api_token': 'DerricksToken1234'
-  }
-  url = <WSX_HOSTED_URL> + urlencode( parameters )
-  response = requests.get(url)

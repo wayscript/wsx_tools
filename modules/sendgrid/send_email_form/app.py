@@ -22,7 +22,7 @@ app = Flask(__name__)
 def index():
     return render_template('form.html')
 
-@app.route('/submit')
+@app.route('/send_email')
 def form_submit():
     to_email = request.args.get('to_email')
     from_email = request.args.get('from_email')
@@ -31,7 +31,13 @@ def form_submit():
     api_token = request.args.get('api_token')
 
     if check_api_tokens(api_token, accepted_tokens):
-        print(send_sendgrid_email(from_email, to_email, subject, content_to_send, sendgrid_api_token))
+        response = send_sendgrid_email(from_email, to_email, subject, content_to_send, sendgrid_api_token)
+        html_string = "<h2>" + str(response) + "</h2>"
+        return html_string
+
+    else:
+        return "<h3>Form Invalid</h3>"
+
 
 if __name__ == '__main__':
     app.run()

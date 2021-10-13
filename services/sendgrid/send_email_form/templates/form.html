@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<form action='/submit' method="GET">
+  <div class="form-group">
+    <label for="to_email">To Email Address</label>
+    <input name="to_email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="from_email">From Email Address</label>
+    <input name="from_email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="subject">Subject</label>
+    <input name="subject" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Hello!">
+  </div>
+  <div class="form-group">
+    <label for="content_to_send">Select template</label>
+    <select name="content_to_send" multiple class="form-control" id="exampleFormControlSelect2">
+      <option>Welcome</option>
+      <option>Follow Up</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="api_token">API Token Name</label>
+    <input name="api_token" type="text" class="form-control" id="exampleFormControlInput1" placeholder="DerricksToken">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
