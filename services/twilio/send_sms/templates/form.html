@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<form action='/send_sms' method="GET">
+  <div class="form-group">
+    <label for="from">From Number</label>
+    <input name="from" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="to">Number to send to</label>
+    <input name="to" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Body of SMS</label>
+    <textarea name='body' class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="api_token">API Token Name</label>
+    <input name="api_token" type="text" class="form-control" id="exampleFormControlInput1" placeholder="DerricksToken">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
