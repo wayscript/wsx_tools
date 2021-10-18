@@ -11,6 +11,8 @@ from logic import check_api_tokens, send_sendgrid_email
 ## that you want to have access to your tool.
 accepted_tokens = ['DerricksToken1234', 'NiharsToken1234']
 
+from_email = 'Derrick+testing@wayscript.com'
+
 # App Logic
 app = Flask(__name__)
 
@@ -21,16 +23,14 @@ def index():
 @app.route('/send_email')
 def form_submit():
     to_email        = request.args.get('to_email')
-    from_email      = request.args.get('from_email')
     subject         = request.args.get('subject')
     content_to_send = request.args.get('content_to_send')
     api_token       = request.args.get('api_token')
 
     if check_api_tokens(api_token, accepted_tokens):
         response = send_sendgrid_email(from_email, to_email, subject, content_to_send)
-        return response.status_code
+        return request.query_string
     else:
-        return "<h3>Form Invalid. Your API Key may of been revoked. Please Contact your Tool Administrator</h3>"
-
+        return request.query_string
 if __name__ == '__main__':
     app.run()
