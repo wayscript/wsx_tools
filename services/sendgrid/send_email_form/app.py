@@ -20,17 +20,21 @@ app = Flask(__name__)
 def index():
     return render_template('form.html')
 
-@app.route('/send_email')
+@app.route('/send_email', methods = ['GET', 'POST'])
 def form_submit():
-    to_email        = request.args.get('to_email')
-    subject         = request.args.get('subject')
-    content_to_send = request.args.get('content_to_send')
-    api_token       = request.args.get('api_token')
+    if request.method == 'POST':
+        to_email        = request.form.get('to_email')
+        subject         = request.form.get('subject')
+        content_to_send = request.form.get('content_to_send')
+        api_token       = request.form.get('api_token')
 
-    if check_api_tokens(api_token, accepted_tokens):
-        response = send_sendgrid_email(from_email, to_email, subject, content_to_send)
-        return request.query_string
+        if check_api_tokens(api_token, accepted_tokens):
+            response = send_sendgrid_email(from_email, to_email, subject, content_to_send)
+            return response
+        else:
+            return 'Invalid API Key'
     else:
-        return request.query_string
+        return 'Not a valid request, Please Send POST.'
+
 if __name__ == '__main__':
     app.run()
