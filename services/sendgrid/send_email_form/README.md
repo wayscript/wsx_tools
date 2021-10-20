@@ -56,14 +56,14 @@ You can test your tool by visiting the url provided in your deploy trigger, or s
 A sample request may look like:
 ```Python
 import requests
-from urllib.parse import urlencode
 
-params = {
-'from_email' : 'Derrick@WayScript.com',
-'to_email' : 'Nihar@WayScript.com',
-'subject' : 'subject',
-'html_content': '<p>hello!</p>'
-}
-url = <WAYSCRIPT_DEPLOY_TRIGGER_URL> + urlencode(params)
-response = requests.get(url)
+data = {'to_email':'derrick@wayscript.com',
+'subject':'Greetings!',
+'content_to_send':'hello!',
+'api_token': 'derrick_token'}
+
+url = 'https://5362804a-e9e6-4c90-ae1c-9a76e5fc4df7.wayscript.cloud/send_email'
+
+response = requests.post(url, json = data)
+print(response.content)
 ```
