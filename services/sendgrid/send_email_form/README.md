@@ -27,11 +27,11 @@ Your file directory inside your lair should look like this:
 </p>
 
 ### Setup Secrets
-Create arbitrary keys and values that you will give access to using your tool.
+Create arbitrary keys that you will give access to using your tool.
 These are up to you and are intended to be given to those who you want to access your tool ( without giving your sendgrid api token away.)
 The names of these tokens should be placed in accepted_tokens in app.py file ( line 12 )
 <p align="center">
-  <img src="https://github.com/wayscript/wsx_tools/blob/master/static/sendgrid/secrets_sendgrid_send_email.jpg?raw=true" />
+  <img src="https://raw.githubusercontent.com/wayscript/wsx_tools/master/static/sendgrid/sendgrid_secrets_send_email.jpg" />
 </p>
 
 You will need to place your sendgrid provided api token into your wayscript .secrets file.
