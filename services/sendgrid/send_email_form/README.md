@@ -54,6 +54,12 @@ https://wsxdocs.wayscript.com/quickstart/host-a-flask-server
 
 This will host your tool at the provided url in the trigger
 
+A nice to have, if you want to make changes and have them immediately reflect in your flask application is to set an environment variable
+```Python
+FLASK_ENV = development
+```
+This enables hot reloading as you make changes to your files.
+
 ### Testing your tool
 You can test your tool by visiting the url provided in your deploy trigger, or sending a request to the url.
 
