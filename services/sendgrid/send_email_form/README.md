@@ -37,7 +37,10 @@ The name of this token should be ```sendgrid_api_token```
 ### Configure App.py
 Inside of App.py create arbitrary keys that you will give access to using your tool.
 These are up to you and are intended to be given to those who you want to access your tool ( without giving your sendgrid api token away.)
-The names of these tokens should be placed in accepted_tokens in app.py file ( line 12 )
+The names of these tokens should be placed in accepted_tokens in ```app.py``` file ( line 12 ):
+```Python
+accepted_tokens = ['derrick_token']
+```
 
 Fill in the from email address variable, this will be the email addresss you used to sign up with sendgrid.
 
