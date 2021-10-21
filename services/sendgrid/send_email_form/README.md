@@ -8,8 +8,8 @@ These distributed keys can be used in a web form or via url to send an email.
 
 There are two options to send emails with this tool
 <ul>
-<li>Send via url + query parameters</li>
-<li>Use a hosted form to submit the information ( generates the query parameter string )</li>
+<li>Send via post request with json payload</li>
+<li>Use a hosted form to submit the information ( generates the payload to send + Post request )</li>
 </ul>
 
 ## Requirements:
@@ -27,15 +27,19 @@ Your file directory inside your lair should look like this:
 </p>
 
 ### Setup Secrets
-Create arbitrary keys that you will give access to using your tool.
-These are up to you and are intended to be given to those who you want to access your tool ( without giving your sendgrid api token away.)
-The names of these tokens should be placed in accepted_tokens in app.py file ( line 12 )
 <p align="center">
   <img src="https://raw.githubusercontent.com/wayscript/wsx_tools/master/static/sendgrid/sendgrid_secrets_send_email.jpg" />
 </p>
 
 You will need to place your sendgrid provided api token into your wayscript .secrets file.
 The name of this token should be ```sendgrid_api_token```
+
+### Configure App.py
+Inside of App.py create arbitrary keys that you will give access to using your tool.
+These are up to you and are intended to be given to those who you want to access your tool ( without giving your sendgrid api token away.)
+The names of these tokens should be placed in accepted_tokens in app.py file ( line 12 )
+
+Fill in the from email address variable, this will be the email addresss you used to sign up with sendgrid.
 
 ### Host your Tool
 Host your tool by creating a deploy trigger within your .triggers file
