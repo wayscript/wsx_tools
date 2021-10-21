@@ -43,6 +43,9 @@ accepted_tokens = ['derrick_token']
 ```
 
 Fill in the from email address variable, this will be the email addresss you used to sign up with sendgrid.
+```Python
+from_email = 'Derrick+testing@wayscript.com'
+```
 
 ### Host your Tool
 Host your tool by creating a deploy trigger within your .triggers file
