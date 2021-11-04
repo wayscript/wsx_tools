@@ -23,10 +23,16 @@ def index():
 @app.route('/send_email', methods = ['GET', 'POST'])
 def form_submit():
     if request.method == 'POST':
-        to_email        = request.json.get('to_email')
-        subject         = request.json.get('subject')
-        content_to_send = request.json.get('content_to_send')
-        api_token       = str(request.json.get('api_token'))
+        if request.form:
+            to_email        = request.form.get('to_email')
+            subject         = request.form.get('subject')
+            content_to_send = request.form.get('content_to_send')
+            api_token       = str(request.form.get('api_token'))
+        if request.json:
+            to_email        = request.json.get('to_email')
+            subject         = request.json.get('subject')
+            content_to_send = request.json.get('content_to_send')
+            api_token       = str(request.json.get('api_token'))
 
         if api_token in accepted_tokens:
             response = send_sendgrid_email(from_email, to_email, subject, content_to_send)
