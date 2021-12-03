@@ -8,7 +8,7 @@ user_name = os.environ.get('user')
 password = os.environ.get('password')
 database = os.environ.get('database')
 
-def create_connection(host_name, user_name, user_password, db_name):
+def create_connection():
     connection = None
     try:
         connection = mysql.connector.connect(
@@ -17,13 +17,12 @@ def create_connection(host_name, user_name, user_password, db_name):
             password=password,
             database=database
         )
-        print("Connection to MySQL DB successful")
     except Error as e:
-        print(f"The error '{e}' occurred")
+        return e
 
     return connection
 
 def read_query(file_name):
-    with open('sql/' + str(file_name)) as f:
+    with open('sql/' + str(file_name)) + '.sql' as f:
     query = f.readlines()
     return query

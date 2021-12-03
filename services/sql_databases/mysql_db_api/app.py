@@ -1,35 +1,20 @@
+# Below are all the routes to interact with your database via API
+
 import os
 
 from flask import Flask, render_template, request
-import mysql.connector
-from mysql.connector import Error
-
-
-from logic import create_connection, read_query
-
-## Configuration:
-os.environ.get('')
 
 # App Logic
 app = Flask(__name__)
 
+## FETCHING DATA FROM DATABASE TABLE
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Get Requests
-@app.route('/get_tables', methods = ['GET'])
-def get_tables():
-    connection = create_connection()
-    query = read_query('get_tables')
+## INSERTING DATA INTO TABLES
 
-
-
-
-
-
-# Post Requests
-@app.route('/create_table', methods = ['GET', 'POST'])
+@app.route('/get_customers', methods = ['GET', 'POST'])
 def form_submit():
     if request.method == 'POST':
         if request.form:
@@ -50,6 +35,8 @@ def form_submit():
             return 'Invalid Token - Contact System Admin'
     else:
         return 'Not a valid request, Please Send POST.'
+
+## WORKING WITH TABLES
 
 if __name__ == '__main__':
     app.run()
