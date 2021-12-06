@@ -1,2 +1,1 @@
-INSERT INTO users
-VALUES ("Derrick", 23, 1000);
+INSERT INTO {table} VALUES {contents};
