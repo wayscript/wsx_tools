@@ -1,1 +1,1 @@
-"SELECT * FROM {table} WHERE {column}='{value}';"
+SELECT * FROM {table} WHERE {column}='{value}';
