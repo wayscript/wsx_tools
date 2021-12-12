@@ -3,5 +3,5 @@ import requests
 payload = {"table":"users"}
 
 
-response = requests.post('http://127.0.0.1:5000/get_all_from_table', json=payload)
+response = requests.post('<WAYSCRIPT-TRIGGER-URL>/get_all_from_table', json=payload)
 print(response.content)
