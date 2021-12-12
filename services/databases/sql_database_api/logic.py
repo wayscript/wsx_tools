@@ -3,10 +3,12 @@ import os
 import mysql.connector
 from mysql.connector import Error
 
-host_name = 'z5zm8hebixwywy9d.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'#os.environ.get('host')
-user_name = 'zqrobp21lm3a28u3'#os.environ.get('user')
-password = ''#os.environ.get('password')
-database = 'o8mw8z2mfdko3zj2'#os.environ.get('database')
+# These values below come from your database credentials page.
+
+host = os.environ.get('host')
+user = os.environ.get('user')
+password = os.environ.get('password')
+database = os.environ.get('database')
 port = '3306'#
 
 ### Helper functions
@@ -17,8 +19,8 @@ def create_connection():
     connection = None
     try:
         connection = mysql.connector.connect(
-            host=host_name,
-            user=user_name,
+            host=host,
+            user=user,
             password=password,
             port=port,
             database=database
