@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<br><br>
+<form id='contact' action='/bert' method="post">
+  <div class="form-group">
+    <label for="string">Query String</label>
+    <input name="string" type="text" class="form-control" id="exampleFormControlInput1" placeholder="The answer to life is [MASK].">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
