@@ -21,7 +21,7 @@ data = {
 'text':'Coming from bot'
 }
 
-response = requests.post('https://slack.com/api/chat.postMessage', data=data, headers=headers)
+response = requests.post(<DEPLOY_TRIGGER_ENDPOINT>/post_message, data=data, headers=headers)
 
 timestamp = response.json().get('message').get('ts')
 success = response.json().get('ok')
