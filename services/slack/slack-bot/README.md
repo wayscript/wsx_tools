@@ -1,4 +1,4 @@
-# Sendgrid Form to Email Tool
+# Slack Automation Service
 This is a service to allow members of your team to interface with slack programmatically and easily.
 
 ## How it works:
