@@ -1,10 +1,10 @@
-![GitHub Logo](static/img/DevelopmentHub.png)
+![GitHub Logo](static/img/explainer.png)
 www.wayscript.com
 
 ## Create Internal Tools and Bots
 
 ## Python Programming in the Cloud
- 
+
 ## Task Automation
 
 ## Build & Process Datasets
@@ -14,7 +14,5 @@ www.wayscript.com
   * [Reference WayScript Script](https://app.wayscript.com/lairs/d935d64a-8b26-4ed3-9c9e-98941573709a/public)
 
 ## Trigger Notifications & Alerts
- 
-## Create Web Interfaces 
 
- 
+## Create Web Interfaces
