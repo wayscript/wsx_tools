@@ -1,0 +1,32 @@
+"event":{
+   "client_msg_id":"38148da1-8fbd-4b61-9d74-52c5d0836dda",
+   "type":"app_mention",
+   "text":"<@U0413B7P4G3> Hello",
+   "user":"U040LHFBELC",
+   "ts":"1662397485.988749",
+   "team":"T040J0Z8935",
+   "bloc
+ks":[
+      {
+         "type":"rich_text",
+         "block_id":"M+H",
+         "elements":[
+            {
+               "type":"rich_text_section",
+               "elements":[
+                  {
+                     "type":"user",
+                     "user_id":"U0413B7P4G3"
+                  },
+                  {
+                     "type":"text",
+                     "text":" Hello"
+                  }
+               ]
+            }
+         ]
+      }
+   ],
+   "channel":"C040WNH0RC1",
+   "event_ts":"1662397485.988749"
+}
