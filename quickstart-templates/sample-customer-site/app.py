@@ -1,5 +1,3 @@
-# Below are all the routes to interact with your database via API
-
 import os
 
 from flask import Flask, render_template, request
@@ -15,6 +13,15 @@ def home():
 @app.route('/book-meeting')
 def meeting():
     return render_template('meeting.html')
+
+@app.route('/submit-meeting', methods=['GET', 'POST'])
+def submit_meeting():
+    name = request.form.get('name')
+    email = request.form.get('email')
+    details = request.form.get('details')
+    ### Do something with the data here
+    print(name)
+    return render_template('home.html')
 
 @app.route('/payments')
 def payments():
