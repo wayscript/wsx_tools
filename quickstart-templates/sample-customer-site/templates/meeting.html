@@ -4,18 +4,18 @@
     <div class="py-5 text-center">
         <h2>Thanks for considering us.</h2>
         <p>Fill out the values below and a member of our team will contact you about how we can help.</p>
-<form>
+<form action="/submit-meeting" method="POST">
     <div class="form-group">
       <label for="exampleFormControlInput1">Email address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
     </div>
     <div class="form-group">
       <label for="exampleFormControlSelect2">Name</label>
-      <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Name">
+      <input name="name" type="text" class="form-control" id="exampleFormControlInput2" placeholder="Name">
     </div>
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Additional Details</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea name="details" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
     <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
   </form>
