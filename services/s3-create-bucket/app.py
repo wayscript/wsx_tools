@@ -39,29 +39,6 @@ def create_s3_client():
     )
     return client
 
-
-@app.route('/create-bucket', methods=['GET', 'POST'])
-def create_aws_resource_s3_bucket():
-  if request.method != 'POST':
-    return {'error': 'endpoint expected POST request with payload "project"'}
-  if not request.json:
-    return {'error': 'Missing Lair Context'}
-  try:
-    user = get_user_details()
-  except:
-    return {'data': 'logged out user.'}
-  
-  # Name Bucket
-  # Name-Project-Env
-  env_type = request.json.get('environment')
-  project_name = request.json.get('name')
-  
-  bucket_name = str(user.get('first_name')) + "-" + project_name + "-" + env_type
-  client = create_s3_client()
-  response = client.create_bucket(Bucket=bucket_name.lower())
-  return response 
-
-
 # Create Bucket Endpoint
 # This creates a bucket for the user depending on their wayscript account information
 @app.route('/create-bucket', methods=['GET', 'POST'])
