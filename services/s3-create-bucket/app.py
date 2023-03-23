@@ -65,7 +65,7 @@ def create_aws_resource_s3_bucket():
 # Pull S3 Bucket Object
 # requires the user to send a payload of "bucket" and "key" to return an S3 object
 @app.route('/get-object', methods=['GET', 'POST'])
-def create_aws_resource_s3_bucket():
+def get_aws_resource():
   if request.method != 'POST':
     return {'error': 'endpoint expected POST request with payload "bucket, key"'}
   if not request.json:
