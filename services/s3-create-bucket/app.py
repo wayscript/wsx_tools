@@ -13,7 +13,6 @@ app = Flask(__name__)
 # For help creating an IAM user with permissions view the AWS docs
 # https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html
 
-region = 'us-east'
 ACCESS_KEY = os.environ.get('ACCESS_KEY')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -60,6 +59,47 @@ def create_aws_resource_s3_bucket():
   bucket_name = str(user.get('first_name')) + "-" + project_name + "-" + env_type
   client = create_s3_client()
   response = client.create_bucket(Bucket=bucket_name.lower())
+  return response 
+
+
+# Create Bucket Endpoint
+# This creates a bucket for the user depending on their wayscript account information
+@app.route('/create-bucket', methods=['GET', 'POST'])
+def create_aws_resource_s3_bucket():
+  if request.method != 'POST':
+    return {'error': 'endpoint expected POST request with payload "project"'}
+  if not request.json:
+    return {'error': 'Missing Lair Context'}
+  try:
+    user = get_user_details()
+  except:
+    return {'data': 'logged out user.'}
+  
+  # Name Bucket
+  # Name-Project-Env
+  env_type = request.json.get('environment')
+  project_name = request.json.get('name')
+  
+  bucket_name = str(user.get('first_name')) + "-" + project_name + "-" + env_type
+  client = create_s3_client()
+  response = client.create_bucket(Bucket=bucket_name.lower())
+  return response 
+
+# Pull S3 Bucket Object
+# requires the user to send a payload of "bucket" and "key" to return an S3 object
+@app.route('/get-object', methods=['GET', 'POST'])
+def create_aws_resource_s3_bucket():
+  if request.method != 'POST':
+    return {'error': 'endpoint expected POST request with payload "bucket, key"'}
+  if not request.json:
+    return {'error': 'Missing Lair Context'}
+  
+  # Set data for where object is 
+  object_bucket = request.json.get('bucket')
+  object_key = request.json.get('key')
+  
+  client = create_s3_client()
+  response = client.get_object(Bucket=object_bucket.lower(), Key=object_key)
   return response 
   
 
